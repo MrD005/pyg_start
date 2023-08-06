@@ -35,7 +35,7 @@ class EndpointHandler():
     def __init__(self, path=""):
         path = "PygmalionAI/pygmalion-6b"
         self.tokenizer = AutoTokenizer.from_pretrained(path)
-        self.model = AutoModelForCausalLM.from_pretrained(path,torch_dtype=torch.float16,trust_remote_code=True).to("cuda")
+        self.model = AutoModelForCausalLM.from_pretrained(path,torch_dtype=torch.float16).to("cuda")
         # self.model = torch.load(f"{path}/torch_model.pt").to("cuda")
 
     def __call__(self, data):
