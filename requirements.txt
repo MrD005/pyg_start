@@ -1,0 +1,3 @@
+hf-endpoints-emulator
+transformers
+accelerate
