@@ -33,9 +33,9 @@ template = """{char_name}'s Persona: insatiably curious, empathetic, daydreamer,
 class EndpointHandler():
 
     def __init__(self, path=""):
-        path = "pygmalionAI/pygmalion-6b"
+        path = "PygmalionAI/pygmalion-6b"
         self.tokenizer = AutoTokenizer.from_pretrained(path)
-        self.model = AutoModelForCausalLM.from_pretrained(path,low_cpu_mem_usage=True,torch_dtype=torch.float16,trust_remote_code=True).to("cuda")
+        self.model = AutoModelForCausalLM.from_pretrained(path,torch_dtype=torch.float16,trust_remote_code=True).to("cuda")
         # self.model = torch.load(f"{path}/torch_model.pt").to("cuda")
 
     def __call__(self, data):
